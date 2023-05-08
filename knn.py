@@ -29,7 +29,7 @@ def predecir(knn, X_test):
 
 def mostrar_precision_modelo (knn, X_test, y_test):
     precision = knn.score(X_test, y_test)
-    return print(precision)
+    return precision
 
 def knn_prediction(new_data):
 
@@ -44,5 +44,8 @@ def knn_prediction(new_data):
     # Hacemos una predicción utilizando el modelo
     y_pred = knn.predict(new_data)
 
+    # Precision del modelo
+    precision = mostrar_precision_modelo(knn, X_test, y_test)
+
     # Devuelve los resultados de la predicción
-    return y_pred
+    return y_pred, precision
